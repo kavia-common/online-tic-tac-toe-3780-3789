@@ -58,7 +58,145 @@
   transition: color 0.3s ease;
 }
 
-.theme-toggle {
+/* --- BEGIN Tic Tac Toe Custom Styles for Ocean Professional Theme --- */
+.ttt-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 24px auto;
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem 2rem 2rem;
+  box-shadow: 0 8px 32px 0 rgba(37, 99, 235, 0.07), 0 1.5px 6px 0 rgba(17,24,39,0.07);
+  min-width: 320px;
+  max-width: 370px;
+  width: 94vw;
+  transition: box-shadow 0.3s, background 0.4s;
+}
+
+.ttt-status-bar {
+  width: 100%;
+  font-size: 1.24rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  letter-spacing: 0.01em;
+  transition: color 0.23s;
+}
+
+.ttt-score-bar {
+  font-size: 1rem;
+  margin-top: 0.2em;
+  font-weight: 500;
+  display: flex;
+  gap: 4px;
+}
+
+.ttt-board {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  margin-bottom: 1.5rem;
+}
+
+.ttt-row {
+  display: flex;
+  gap: 0.2em;
+}
+
+.ttt-square {
+  width: 72px;
+  height: 72px;
+  background: #f9fafb;
+  color: #111827;
+  font-size: 2.3rem;
+  font-weight: 700;
+  border: 2.5px solid rgba(37, 99, 235, 0.08);
+  border-radius: 12px;
+  box-shadow: 0 2px 6px 0 rgb(37 99 235 / 2%);
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.18s, border 0.18s, box-shadow 0.13s, color 0.19s;
+  user-select: none;
+  margin: 0;
+  padding: 0;
+}
+
+.ttt-square:hover:enabled {
+  background: linear-gradient(90deg, #2563eb11, #eef2ff);
+  border-color: #2563EB;
+  box-shadow: 0 1.5px 8px 0 rgba(245,158,11,0.10);
+  color: #2563EB;
+  z-index: 1;
+}
+
+.ttt-square:disabled {
+  opacity: 0.67;
+  cursor: not-allowed;
+  background: #f3f4f6;
+}
+
+.ttt-square[aria-label*="X"] {
+  color: #2563EB;
+}
+
+.ttt-square[aria-label*="O"] {
+  color: #F59E0B;
+}
+
+.ttt-restart-btn {
+  margin-top: 0.7rem;
+  padding: 0.61em 2.2em;
+  font-size: 1.09rem;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #2563EB 80%, #F59E0B 120%);
+  box-shadow: 0 1.2px 7px 0 #2563eb19;
+  cursor: pointer;
+  transition: background 0.21s, box-shadow 0.18s, transform 0.1s;
+  letter-spacing: 0.01em;
+}
+
+.ttt-restart-btn:hover {
+  background: linear-gradient(90deg, #1e40af 90%, #fde68a 140%);
+  box-shadow: 0 3px 18px 0 #2563eb1c;
+  transform: translateY(-2px) scale(1.03);
+}
+
+.ttt-footer {
+  margin-top: 3rem;
+}
+
+@media (max-width: 600px) {
+  .ttt-panel {
+    padding: 1.4rem 0.7rem 1.6rem 0.7rem;
+    min-width: 0;
+    width: 99vw;
+    max-width: 99vw;
+    border-radius: 1.2rem;
+  }
+  .ttt-board {
+    gap: 0.17em;
+  }
+  .ttt-square {
+    width: 21vw;
+    height: 21vw;
+    font-size: 1.7rem;
+    min-width: 44px;
+    min-height: 44px;
+    max-width: 98px;
+    max-height: 98px;
+  }
+}
+
+/* --- END Tic Tac Toe Custom Styles --- */
   position: absolute;
   top: 20px;
   right: 20px;
@@ -72,8 +210,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
+  
 .theme-toggle:hover {
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
